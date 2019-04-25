@@ -1,0 +1,1 @@
+out = xd*(1.0/(a*a)*cos(theta)*(xd*cos(theta)-yd*sin(theta))+1.0/(b*b)*sin(theta)*(yd*cos(theta)+xd*sin(theta)))+yd*(1.0/(b*b)*cos(theta)*(yd*cos(theta)+xd*sin(theta))-1.0/(a*a)*sin(theta)*(xd*cos(theta)-yd*sin(theta)));

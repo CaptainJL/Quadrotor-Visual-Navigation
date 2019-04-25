@@ -1,0 +1,17 @@
+<package>
+  <description brief="GPU_2_Quad_ROS">
+
+     GPU_2_Quad_ROS
+
+  </description>
+  <author>Vision Flyer</author>
+  <license>BSD</license>
+  <review status="dev" notes=""/>
+  <url></url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+
+</package>
+
+

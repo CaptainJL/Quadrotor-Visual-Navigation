@@ -1,0 +1,1949 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PropList contentDescriptor="mvBlueFOX data" name="DriverData" default="0" flags="3" size="7" parent="none" versionMajor="2" versionMinor="22" versionRelease="0">
+<PropList name="ImagingSubsystem" default="0" position="0" flags="3" size="5" parent="none">
+<PropList name="Setting" default="0" position="0" flags="3" size="1" parent="none">
+<PropList name="Base" default="0" position="0" flags="3" size="6" parent="Setting">
+<PropList name="Camera" default="0" position="1" flags="3" size="30" parent="Camera">
+<PropList name="Aoi" default="0" position="0" flags="3" size="4" parent="Aoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="752"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="480"></Value>
+</Property>
+</PropList>
+<Property name="PixelFormat" default="0" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Mono8"></Value>
+</Property>
+<Property name="AutoControlMode" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Standard"></Value>
+</Property>
+<Property name="AutoExposeControl" default="0" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="AutoGainControl" default="0" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="AutoControlParameters" default="0" position="5" flags="3" size="10" parent="AutoControlParameters">
+<Property name="AoiMode" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Full"></Value>
+</Property>
+<PropList name="Aoi" default="0" position="1" flags="3" size="4" parent="Aoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="752"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="480"></Value>
+</Property>
+</PropList>
+<Property name="DesiredAverageGreyValue" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="70"></Value>
+</Property>
+<Property name="ControllerSpeed" default="1" position="3" flags="263" size="1" formatString="%d" valType="1">
+<Value index="0" val="Fast"></Value>
+</Property>
+<Property name="ControllerDelay_Images" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="1"></Value>
+</Property>
+<PropList name="ControllerParameter" default="0" position="5" flags="3" size="3" parent="ControllerParameter">
+<Property name="ControllerGain" default="1" position="0" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.500000"></Value>
+</Property>
+<Property name="IntegralTime_ms" default="1" position="1" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="850.000000"></Value>
+</Property>
+<Property name="DerivativeTime_ms" default="1" position="2" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+</PropList>
+<Property name="GainLowerLimit_dB" default="1" position="6" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+<Property name="GainUpperLimit_dB" default="1" position="7" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="12.000000"></Value>
+</Property>
+<Property name="ExposeLowerLimit_us" default="1" position="8" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="12"></Value>
+</Property>
+<Property name="ExposeUpperLimit_us" default="0" position="9" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="9500"></Value>
+</Property>
+</PropList>
+<Property name="Gain_dB" default="0" position="6" flags="7" size="1" formatString="%.3f dB" valType="2">
+<Value index="0" val="12.000 dB"></Value>
+</Property>
+<Property name="OffsetAutoCalibration" default="0" position="7" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="OffsetAutoBlackLevel" default="1" position="8" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+<Property name="OffsetAutoBlackSpeed" default="1" position="9" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Medium"></Value>
+</Property>
+<Property name="Offset_pc" default="1" position="10" flags="7" size="1" formatString="%.1f %%" valType="2">
+<Value index="0" val="0.0 %"></Value>
+</Property>
+<Property name="OffsetCorrection_pc" default="1" position="11" flags="7" size="4" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+<Value index="1" val="0.00 %"></Value>
+<Value index="2" val="0.00 %"></Value>
+<Value index="3" val="0.00 %"></Value>
+</Property>
+<Property name="TriggerMode" default="1" position="12" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Continuous"></Value>
+</Property>
+<Property name="TriggerSource" default="1" position="13" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="DigIn0"></Value>
+</Property>
+<Property name="ExposeMode" default="0" position="14" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Standard"></Value>
+</Property>
+<Property name="PixelClock_KHz" default="0" position="15" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="40000"></Value>
+</Property>
+<Property name="Expose_us" default="0" position="16" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="19"></Value>
+</Property>
+<Property name="BinningMode" default="0" position="17" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="BinningHV"></Value>
+</Property>
+<Property name="FrameDelay_us" default="0" position="18" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="2350"></Value>
+</Property>
+<Property name="LineDelay_clk" default="1" position="19" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="Framerate_Hz" default="0" position="20" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="50.000000"></Value>
+</Property>
+<Property name="FlashMode" default="1" position="21" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="FlashType" default="1" position="22" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Standard"></Value>
+</Property>
+<Property name="TestMode" default="1" position="23" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="ShutterMode" default="1" position="24" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="FrameShutter"></Value>
+</Property>
+<Property name="ImageRequestTimeout_ms" default="1" position="25" flags="7" size="1" formatString="%d ms" valType="1">
+<Value index="0" val="2000 ms"></Value>
+</Property>
+<Property name="FlashToExposeDelay_us" default="1" position="26" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="AdvancedOptions" default="1" position="27" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="HDRControl" default="0" position="28" flags="3" size="4" parent="HDRControl">
+<Property name="HDREnable" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="HDRMode" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Fixed0"></Value>
+</Property>
+<Property name="HDRKneePointCount" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="1"></Value>
+</Property>
+<PropList name="HDRKneePoints" default="0" position="3" flags="3" size="2" parent="HDRKneePoints">
+<PropList name="HDRKneePoint-0" default="0" position="0" flags="3" size="2" parent="HDRKneePoint-0">
+<Property name="HDRExposure_ppm" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="15625"></Value>
+</Property>
+<Property name="HDRControlVoltage_mV" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="3030"></Value>
+</Property>
+</PropList>
+<PropList name="HDRKneePoint-1" default="0" position="1" flags="3" size="2" parent="HDRKneePoint-1">
+<Property name="HDRExposure_ppm" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="3906"></Value>
+</Property>
+<Property name="HDRControlVoltage_mV" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="2630"></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<Property name="SensorTimingMode" default="1" position="29" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Standard"></Value>
+</Property>
+</PropList>
+<PropList name="ImageProcessing" default="0" position="3" flags="3" size="21" parent="ImageProcessing">
+<PropList name="FormatReinterpreter" default="0" position="1" flags="3" size="2" parent="FormatReinterpreter">
+<Property name="FormatReinterpreterEnable" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="FormatReinterpreterMode" default="1" position="1" flags="7" size="1" formatString="0x%08x" valType="1">
+<Value index="0" val="Mono8_To_RGB888Packed"></Value>
+</Property>
+</PropList>
+<PropList name="DefectivePixelsFilter" default="0" position="2" flags="3" size="8" parent="DefectivePixelsFilter">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="LeakyPixelDeviation_ADCLimit" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+<Property name="ColdPixelDeviation_pc" default="1" position="2" flags="7" size="1" formatString="%d %%" valType="1">
+<Value index="0" val="15 %"></Value>
+</Property>
+<Property name="DefectivePixelOffsetX" default="0" position="4" flags="3" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DefectivePixelOffsetY" default="0" position="5" flags="3" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+</PropList>
+<PropList name="DarkCurrentFilter" default="0" position="3" flags="3" size="3" parent="DarkCurrentFilter">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="CalibrationImageCount" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="5"></Value>
+</Property>
+</PropList>
+<PropList name="FlatFieldFilter" default="0" position="4" flags="3" size="3" parent="FlatFieldFilter">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="CorrectionMode" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Default"></Value>
+</Property>
+<Property name="CalibrationImageCount" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="5"></Value>
+</Property>
+</PropList>
+<PropList name="GainOffsetKnee" default="0" position="6" flags="3" size="3" parent="GainOffsetKnee">
+<Property name="GainOffsetKneeEnable" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="GainOffsetKneeMasterOffset_pc" default="0" position="1" flags="7" size="1" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+</Property>
+<PropList name="GainOffsetKneeChannels" default="0" position="2" flags="7" size="4" parent="GainOffsetKneeChannels">
+<PropList name="Channel-0" default="0" position="0" flags="7" size="2" parent="Channel-0">
+<Property name="Gain" default="1" position="0" flags="7" size="1" formatString="%.4f" valType="2">
+<Value index="0" val="1.0000"></Value>
+</Property>
+<Property name="Offset_pc" default="1" position="1" flags="7" size="1" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+</Property>
+</PropList>
+<PropList name="Channel-1" default="0" position="1" flags="7" size="2" parent="Channel-1">
+<Property name="Gain" default="1" position="0" flags="7" size="1" formatString="%.4f" valType="2">
+<Value index="0" val="1.0000"></Value>
+</Property>
+<Property name="Offset_pc" default="1" position="1" flags="7" size="1" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+</Property>
+</PropList>
+<PropList name="Channel-2" default="0" position="2" flags="7" size="2" parent="Channel-2">
+<Property name="Gain" default="1" position="0" flags="7" size="1" formatString="%.4f" valType="2">
+<Value index="0" val="1.0000"></Value>
+</Property>
+<Property name="Offset_pc" default="1" position="1" flags="7" size="1" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+</Property>
+</PropList>
+<PropList name="Channel-3" default="0" position="3" flags="7" size="2" parent="Channel-3">
+<Property name="Gain" default="1" position="0" flags="7" size="1" formatString="%.4f" valType="2">
+<Value index="0" val="1.0000"></Value>
+</Property>
+<Property name="Offset_pc" default="1" position="1" flags="7" size="1" formatString="%.2f %%" valType="2">
+<Value index="0" val="0.00 %"></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<Property name="MirrorMode" default="1" position="7" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="Mirror" default="0" position="8" flags="3" size="3" parent="Mirror">
+<Property name="MirrorOperationMode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Global"></Value>
+</Property>
+<Property name="MirrorModeGlobal" default="1" position="1" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="MirrorChannels" default="0" position="2" flags="7" size="3" parent="MirrorChannels">
+<PropList name="Channel-0" default="0" position="0" flags="7" size="1" parent="Channel-0">
+<Property name="MirrorMode" default="1" position="0" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+</PropList>
+<PropList name="Channel-1" default="0" position="1" flags="7" size="1" parent="Channel-1">
+<Property name="MirrorMode" default="1" position="0" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+</PropList>
+<PropList name="Channel-2" default="0" position="2" flags="7" size="1" parent="Channel-2">
+<Property name="MirrorMode" default="1" position="0" flags="39" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<Property name="ColorProcessing" default="0" position="9" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Raw"></Value>
+</Property>
+<Property name="BayerConversionMode" default="1" position="10" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Auto"></Value>
+</Property>
+<Property name="WhiteBalance" default="0" position="11" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="User1"></Value>
+</Property>
+<Property name="WhiteBalanceCalibration" default="0" position="12" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="WhiteBalanceSettings-1" default="0" position="13" flags="3" size="8" parent="WhiteBalanceSettings-1">
+<Property name="WBAoiMode" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Full"></Value>
+</Property>
+<PropList name="WBAoi" default="0" position="1" flags="3" size="4" parent="WBAoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="295"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="215"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+</PropList>
+<Property name="TotalGain" default="1" position="2" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="Offset" default="1" position="3" flags="7" size="1" formatString="%.1f" valType="2">
+<Value index="0" val="0.0"></Value>
+</Property>
+<Property name="RedGain" default="0" position="4" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="GreenGain" default="0" position="5" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.015"></Value>
+</Property>
+<Property name="BlueGain" default="0" position="6" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.405"></Value>
+</Property>
+</PropList>
+<PropList name="WhiteBalanceSettings-2" default="0" position="14" flags="3" size="8" parent="WhiteBalanceSettings-2">
+<Property name="WBAoiMode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Centered"></Value>
+</Property>
+<PropList name="WBAoi" default="0" position="1" flags="3" size="4" parent="WBAoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="295"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="215"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+</PropList>
+<Property name="TotalGain" default="1" position="2" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="Offset" default="1" position="3" flags="7" size="1" formatString="%.1f" valType="2">
+<Value index="0" val="0.0"></Value>
+</Property>
+<Property name="RedGain" default="1" position="4" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="GreenGain" default="1" position="5" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="BlueGain" default="1" position="6" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+</PropList>
+<PropList name="WhiteBalanceSettings-3" default="0" position="15" flags="3" size="8" parent="WhiteBalanceSettings-3">
+<Property name="WBAoiMode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Centered"></Value>
+</Property>
+<PropList name="WBAoi" default="0" position="1" flags="3" size="4" parent="WBAoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="295"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="215"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+</PropList>
+<Property name="TotalGain" default="1" position="2" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="Offset" default="1" position="3" flags="7" size="1" formatString="%.1f" valType="2">
+<Value index="0" val="0.0"></Value>
+</Property>
+<Property name="RedGain" default="1" position="4" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="GreenGain" default="1" position="5" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="BlueGain" default="1" position="6" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+</PropList>
+<PropList name="WhiteBalanceSettings-4" default="0" position="16" flags="3" size="8" parent="WhiteBalanceSettings-4">
+<Property name="WBAoiMode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Centered"></Value>
+</Property>
+<PropList name="WBAoi" default="0" position="1" flags="3" size="4" parent="WBAoi">
+<Property name="X" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="295"></Value>
+</Property>
+<Property name="Y" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="215"></Value>
+</Property>
+<Property name="W" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+<Property name="H" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="50"></Value>
+</Property>
+</PropList>
+<Property name="TotalGain" default="1" position="2" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="Offset" default="1" position="3" flags="7" size="1" formatString="%.1f" valType="2">
+<Value index="0" val="0.0"></Value>
+</Property>
+<Property name="RedGain" default="1" position="4" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="GreenGain" default="1" position="5" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+<Property name="BlueGain" default="1" position="6" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.000"></Value>
+</Property>
+</PropList>
+<Property name="Filter" default="1" position="17" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<PropList name="Saturation" default="0" position="18" flags="3" size="3" parent="Saturation">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="Saturation_pc" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="100"></Value>
+</Property>
+<Property name="UVWeighting" default="1" position="2" flags="7" size="1" formatString="%.3f" valType="2">
+<Value index="0" val="1.400"></Value>
+</Property>
+</PropList>
+<PropList name="LUTOperations" default="0" position="19" flags="3" size="7" parent="LUTOperations">
+<Property name="LUTEnable" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="LUTMode" default="0" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Gamma"></Value>
+</Property>
+<Property name="LUTInterpolationMode" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Threshold"></Value>
+</Property>
+<Property name="LUTImplementation" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Software"></Value>
+</Property>
+<Property name="LUTMappingHardware" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="10To8"></Value>
+</Property>
+<Property name="LUTMappingSoftware" default="0" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="8To8"></Value>
+</Property>
+<PropList name="LUTs" default="0" position="6" flags="7" size="4" parent="LUTs">
+<PropList name="LUT-0" default="0" position="0" flags="7" size="10" parent="LUT-0">
+<Property name="Gamma" default="0" position="0" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="1.800000"></Value>
+</Property>
+<Property name="GammaAlpha" default="1" position="1" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+<Property name="GammaMode" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="LinearStart"></Value>
+</Property>
+<Property name="GammaStartThreshold" default="0" position="3" flags="263" size="1" formatString="%d" valType="1">
+<Value index="0" val="12"></Value>
+</Property>
+<Property name="ValueCount" default="1" position="4" flags="259" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+<Property name="InputValues" default="0" position="5" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="255"></Value>
+</Property>
+<Property name="OutputValues" default="0" position="6" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="255"></Value>
+<Value index="1" val="0"></Value>
+</Property>
+<Property name="DirectValues" default="0" position="7" flags="263" size="256" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="0"></Value>
+<Value index="2" val="0"></Value>
+<Value index="3" val="0"></Value>
+<Value index="4" val="0"></Value>
+<Value index="5" val="0"></Value>
+<Value index="6" val="0"></Value>
+<Value index="7" val="0"></Value>
+<Value index="8" val="0"></Value>
+<Value index="9" val="0"></Value>
+<Value index="10" val="0"></Value>
+<Value index="11" val="0"></Value>
+<Value index="12" val="0"></Value>
+<Value index="13" val="0"></Value>
+<Value index="14" val="0"></Value>
+<Value index="15" val="0"></Value>
+<Value index="16" val="0"></Value>
+<Value index="17" val="0"></Value>
+<Value index="18" val="0"></Value>
+<Value index="19" val="0"></Value>
+<Value index="20" val="0"></Value>
+<Value index="21" val="0"></Value>
+<Value index="22" val="0"></Value>
+<Value index="23" val="0"></Value>
+<Value index="24" val="0"></Value>
+<Value index="25" val="0"></Value>
+<Value index="26" val="0"></Value>
+<Value index="27" val="0"></Value>
+<Value index="28" val="0"></Value>
+<Value index="29" val="0"></Value>
+<Value index="30" val="0"></Value>
+<Value index="31" val="0"></Value>
+<Value index="32" val="0"></Value>
+<Value index="33" val="0"></Value>
+<Value index="34" val="0"></Value>
+<Value index="35" val="0"></Value>
+<Value index="36" val="0"></Value>
+<Value index="37" val="0"></Value>
+<Value index="38" val="0"></Value>
+<Value index="39" val="0"></Value>
+<Value index="40" val="0"></Value>
+<Value index="41" val="0"></Value>
+<Value index="42" val="0"></Value>
+<Value index="43" val="0"></Value>
+<Value index="44" val="0"></Value>
+<Value index="45" val="0"></Value>
+<Value index="46" val="0"></Value>
+<Value index="47" val="0"></Value>
+<Value index="48" val="0"></Value>
+<Value index="49" val="0"></Value>
+<Value index="50" val="0"></Value>
+<Value index="51" val="0"></Value>
+<Value index="52" val="0"></Value>
+<Value index="53" val="0"></Value>
+<Value index="54" val="0"></Value>
+<Value index="55" val="0"></Value>
+<Value index="56" val="0"></Value>
+<Value index="57" val="0"></Value>
+<Value index="58" val="0"></Value>
+<Value index="59" val="0"></Value>
+<Value index="60" val="0"></Value>
+<Value index="61" val="0"></Value>
+<Value index="62" val="0"></Value>
+<Value index="63" val="0"></Value>
+<Value index="64" val="0"></Value>
+<Value index="65" val="0"></Value>
+<Value index="66" val="0"></Value>
+<Value index="67" val="0"></Value>
+<Value index="68" val="0"></Value>
+<Value index="69" val="0"></Value>
+<Value index="70" val="0"></Value>
+<Value index="71" val="0"></Value>
+<Value index="72" val="0"></Value>
+<Value index="73" val="0"></Value>
+<Value index="74" val="0"></Value>
+<Value index="75" val="0"></Value>
+<Value index="76" val="0"></Value>
+<Value index="77" val="0"></Value>
+<Value index="78" val="0"></Value>
+<Value index="79" val="0"></Value>
+<Value index="80" val="0"></Value>
+<Value index="81" val="0"></Value>
+<Value index="82" val="0"></Value>
+<Value index="83" val="0"></Value>
+<Value index="84" val="0"></Value>
+<Value index="85" val="0"></Value>
+<Value index="86" val="0"></Value>
+<Value index="87" val="0"></Value>
+<Value index="88" val="0"></Value>
+<Value index="89" val="0"></Value>
+<Value index="90" val="0"></Value>
+<Value index="91" val="0"></Value>
+<Value index="92" val="0"></Value>
+<Value index="93" val="0"></Value>
+<Value index="94" val="0"></Value>
+<Value index="95" val="0"></Value>
+<Value index="96" val="0"></Value>
+<Value index="97" val="0"></Value>
+<Value index="98" val="0"></Value>
+<Value index="99" val="0"></Value>
+<Value index="100" val="0"></Value>
+<Value index="101" val="0"></Value>
+<Value index="102" val="0"></Value>
+<Value index="103" val="0"></Value>
+<Value index="104" val="0"></Value>
+<Value index="105" val="0"></Value>
+<Value index="106" val="0"></Value>
+<Value index="107" val="0"></Value>
+<Value index="108" val="0"></Value>
+<Value index="109" val="0"></Value>
+<Value index="110" val="0"></Value>
+<Value index="111" val="0"></Value>
+<Value index="112" val="0"></Value>
+<Value index="113" val="0"></Value>
+<Value index="114" val="0"></Value>
+<Value index="115" val="0"></Value>
+<Value index="116" val="0"></Value>
+<Value index="117" val="0"></Value>
+<Value index="118" val="0"></Value>
+<Value index="119" val="0"></Value>
+<Value index="120" val="0"></Value>
+<Value index="121" val="0"></Value>
+<Value index="122" val="0"></Value>
+<Value index="123" val="0"></Value>
+<Value index="124" val="0"></Value>
+<Value index="125" val="0"></Value>
+<Value index="126" val="0"></Value>
+<Value index="127" val="0"></Value>
+<Value index="128" val="0"></Value>
+<Value index="129" val="0"></Value>
+<Value index="130" val="0"></Value>
+<Value index="131" val="0"></Value>
+<Value index="132" val="0"></Value>
+<Value index="133" val="0"></Value>
+<Value index="134" val="0"></Value>
+<Value index="135" val="0"></Value>
+<Value index="136" val="0"></Value>
+<Value index="137" val="0"></Value>
+<Value index="138" val="0"></Value>
+<Value index="139" val="0"></Value>
+<Value index="140" val="0"></Value>
+<Value index="141" val="0"></Value>
+<Value index="142" val="0"></Value>
+<Value index="143" val="0"></Value>
+<Value index="144" val="0"></Value>
+<Value index="145" val="0"></Value>
+<Value index="146" val="0"></Value>
+<Value index="147" val="0"></Value>
+<Value index="148" val="0"></Value>
+<Value index="149" val="0"></Value>
+<Value index="150" val="0"></Value>
+<Value index="151" val="0"></Value>
+<Value index="152" val="0"></Value>
+<Value index="153" val="0"></Value>
+<Value index="154" val="0"></Value>
+<Value index="155" val="0"></Value>
+<Value index="156" val="0"></Value>
+<Value index="157" val="0"></Value>
+<Value index="158" val="0"></Value>
+<Value index="159" val="0"></Value>
+<Value index="160" val="0"></Value>
+<Value index="161" val="0"></Value>
+<Value index="162" val="0"></Value>
+<Value index="163" val="0"></Value>
+<Value index="164" val="0"></Value>
+<Value index="165" val="0"></Value>
+<Value index="166" val="0"></Value>
+<Value index="167" val="0"></Value>
+<Value index="168" val="0"></Value>
+<Value index="169" val="0"></Value>
+<Value index="170" val="0"></Value>
+<Value index="171" val="0"></Value>
+<Value index="172" val="0"></Value>
+<Value index="173" val="0"></Value>
+<Value index="174" val="0"></Value>
+<Value index="175" val="0"></Value>
+<Value index="176" val="0"></Value>
+<Value index="177" val="0"></Value>
+<Value index="178" val="0"></Value>
+<Value index="179" val="0"></Value>
+<Value index="180" val="0"></Value>
+<Value index="181" val="0"></Value>
+<Value index="182" val="0"></Value>
+<Value index="183" val="0"></Value>
+<Value index="184" val="0"></Value>
+<Value index="185" val="0"></Value>
+<Value index="186" val="0"></Value>
+<Value index="187" val="0"></Value>
+<Value index="188" val="0"></Value>
+<Value index="189" val="0"></Value>
+<Value index="190" val="0"></Value>
+<Value index="191" val="0"></Value>
+<Value index="192" val="0"></Value>
+<Value index="193" val="0"></Value>
+<Value index="194" val="0"></Value>
+<Value index="195" val="0"></Value>
+<Value index="196" val="0"></Value>
+<Value index="197" val="0"></Value>
+<Value index="198" val="0"></Value>
+<Value index="199" val="0"></Value>
+<Value index="200" val="0"></Value>
+<Value index="201" val="0"></Value>
+<Value index="202" val="0"></Value>
+<Value index="203" val="0"></Value>
+<Value index="204" val="0"></Value>
+<Value index="205" val="0"></Value>
+<Value index="206" val="0"></Value>
+<Value index="207" val="0"></Value>
+<Value index="208" val="0"></Value>
+<Value index="209" val="0"></Value>
+<Value index="210" val="0"></Value>
+<Value index="211" val="0"></Value>
+<Value index="212" val="0"></Value>
+<Value index="213" val="0"></Value>
+<Value index="214" val="0"></Value>
+<Value index="215" val="0"></Value>
+<Value index="216" val="0"></Value>
+<Value index="217" val="0"></Value>
+<Value index="218" val="0"></Value>
+<Value index="219" val="0"></Value>
+<Value index="220" val="0"></Value>
+<Value index="221" val="0"></Value>
+<Value index="222" val="0"></Value>
+<Value index="223" val="0"></Value>
+<Value index="224" val="0"></Value>
+<Value index="225" val="0"></Value>
+<Value index="226" val="0"></Value>
+<Value index="227" val="0"></Value>
+<Value index="228" val="0"></Value>
+<Value index="229" val="0"></Value>
+<Value index="230" val="0"></Value>
+<Value index="231" val="0"></Value>
+<Value index="232" val="0"></Value>
+<Value index="233" val="0"></Value>
+<Value index="234" val="0"></Value>
+<Value index="235" val="0"></Value>
+<Value index="236" val="0"></Value>
+<Value index="237" val="0"></Value>
+<Value index="238" val="0"></Value>
+<Value index="239" val="0"></Value>
+<Value index="240" val="0"></Value>
+<Value index="241" val="0"></Value>
+<Value index="242" val="0"></Value>
+<Value index="243" val="0"></Value>
+<Value index="244" val="0"></Value>
+<Value index="245" val="0"></Value>
+<Value index="246" val="0"></Value>
+<Value index="247" val="0"></Value>
+<Value index="248" val="0"></Value>
+<Value index="249" val="0"></Value>
+<Value index="250" val="0"></Value>
+<Value index="251" val="0"></Value>
+<Value index="252" val="0"></Value>
+<Value index="253" val="0"></Value>
+<Value index="254" val="0"></Value>
+<Value index="255" val="0"></Value>
+</Property>
+<Property name="FileName" default="1" position="8" flags="7" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+<PropList name="LUT-1" default="0" position="1" flags="7" size="10" parent="LUT-1">
+<Property name="Gamma" default="0" position="0" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="1.800000"></Value>
+</Property>
+<Property name="GammaAlpha" default="1" position="1" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+<Property name="GammaMode" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="LinearStart"></Value>
+</Property>
+<Property name="GammaStartThreshold" default="0" position="3" flags="263" size="1" formatString="%d" valType="1">
+<Value index="0" val="12"></Value>
+</Property>
+<Property name="ValueCount" default="1" position="4" flags="259" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+<Property name="InputValues" default="0" position="5" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="255"></Value>
+</Property>
+<Property name="OutputValues" default="0" position="6" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="255"></Value>
+<Value index="1" val="0"></Value>
+</Property>
+<Property name="DirectValues" default="0" position="7" flags="263" size="256" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="0"></Value>
+<Value index="2" val="0"></Value>
+<Value index="3" val="0"></Value>
+<Value index="4" val="0"></Value>
+<Value index="5" val="0"></Value>
+<Value index="6" val="0"></Value>
+<Value index="7" val="0"></Value>
+<Value index="8" val="0"></Value>
+<Value index="9" val="0"></Value>
+<Value index="10" val="0"></Value>
+<Value index="11" val="0"></Value>
+<Value index="12" val="0"></Value>
+<Value index="13" val="0"></Value>
+<Value index="14" val="0"></Value>
+<Value index="15" val="0"></Value>
+<Value index="16" val="0"></Value>
+<Value index="17" val="0"></Value>
+<Value index="18" val="0"></Value>
+<Value index="19" val="0"></Value>
+<Value index="20" val="0"></Value>
+<Value index="21" val="0"></Value>
+<Value index="22" val="0"></Value>
+<Value index="23" val="0"></Value>
+<Value index="24" val="0"></Value>
+<Value index="25" val="0"></Value>
+<Value index="26" val="0"></Value>
+<Value index="27" val="0"></Value>
+<Value index="28" val="0"></Value>
+<Value index="29" val="0"></Value>
+<Value index="30" val="0"></Value>
+<Value index="31" val="0"></Value>
+<Value index="32" val="0"></Value>
+<Value index="33" val="0"></Value>
+<Value index="34" val="0"></Value>
+<Value index="35" val="0"></Value>
+<Value index="36" val="0"></Value>
+<Value index="37" val="0"></Value>
+<Value index="38" val="0"></Value>
+<Value index="39" val="0"></Value>
+<Value index="40" val="0"></Value>
+<Value index="41" val="0"></Value>
+<Value index="42" val="0"></Value>
+<Value index="43" val="0"></Value>
+<Value index="44" val="0"></Value>
+<Value index="45" val="0"></Value>
+<Value index="46" val="0"></Value>
+<Value index="47" val="0"></Value>
+<Value index="48" val="0"></Value>
+<Value index="49" val="0"></Value>
+<Value index="50" val="0"></Value>
+<Value index="51" val="0"></Value>
+<Value index="52" val="0"></Value>
+<Value index="53" val="0"></Value>
+<Value index="54" val="0"></Value>
+<Value index="55" val="0"></Value>
+<Value index="56" val="0"></Value>
+<Value index="57" val="0"></Value>
+<Value index="58" val="0"></Value>
+<Value index="59" val="0"></Value>
+<Value index="60" val="0"></Value>
+<Value index="61" val="0"></Value>
+<Value index="62" val="0"></Value>
+<Value index="63" val="0"></Value>
+<Value index="64" val="0"></Value>
+<Value index="65" val="0"></Value>
+<Value index="66" val="0"></Value>
+<Value index="67" val="0"></Value>
+<Value index="68" val="0"></Value>
+<Value index="69" val="0"></Value>
+<Value index="70" val="0"></Value>
+<Value index="71" val="0"></Value>
+<Value index="72" val="0"></Value>
+<Value index="73" val="0"></Value>
+<Value index="74" val="0"></Value>
+<Value index="75" val="0"></Value>
+<Value index="76" val="0"></Value>
+<Value index="77" val="0"></Value>
+<Value index="78" val="0"></Value>
+<Value index="79" val="0"></Value>
+<Value index="80" val="0"></Value>
+<Value index="81" val="0"></Value>
+<Value index="82" val="0"></Value>
+<Value index="83" val="0"></Value>
+<Value index="84" val="0"></Value>
+<Value index="85" val="0"></Value>
+<Value index="86" val="0"></Value>
+<Value index="87" val="0"></Value>
+<Value index="88" val="0"></Value>
+<Value index="89" val="0"></Value>
+<Value index="90" val="0"></Value>
+<Value index="91" val="0"></Value>
+<Value index="92" val="0"></Value>
+<Value index="93" val="0"></Value>
+<Value index="94" val="0"></Value>
+<Value index="95" val="0"></Value>
+<Value index="96" val="0"></Value>
+<Value index="97" val="0"></Value>
+<Value index="98" val="0"></Value>
+<Value index="99" val="0"></Value>
+<Value index="100" val="0"></Value>
+<Value index="101" val="0"></Value>
+<Value index="102" val="0"></Value>
+<Value index="103" val="0"></Value>
+<Value index="104" val="0"></Value>
+<Value index="105" val="0"></Value>
+<Value index="106" val="0"></Value>
+<Value index="107" val="0"></Value>
+<Value index="108" val="0"></Value>
+<Value index="109" val="0"></Value>
+<Value index="110" val="0"></Value>
+<Value index="111" val="0"></Value>
+<Value index="112" val="0"></Value>
+<Value index="113" val="0"></Value>
+<Value index="114" val="0"></Value>
+<Value index="115" val="0"></Value>
+<Value index="116" val="0"></Value>
+<Value index="117" val="0"></Value>
+<Value index="118" val="0"></Value>
+<Value index="119" val="0"></Value>
+<Value index="120" val="0"></Value>
+<Value index="121" val="0"></Value>
+<Value index="122" val="0"></Value>
+<Value index="123" val="0"></Value>
+<Value index="124" val="0"></Value>
+<Value index="125" val="0"></Value>
+<Value index="126" val="0"></Value>
+<Value index="127" val="0"></Value>
+<Value index="128" val="0"></Value>
+<Value index="129" val="0"></Value>
+<Value index="130" val="0"></Value>
+<Value index="131" val="0"></Value>
+<Value index="132" val="0"></Value>
+<Value index="133" val="0"></Value>
+<Value index="134" val="0"></Value>
+<Value index="135" val="0"></Value>
+<Value index="136" val="0"></Value>
+<Value index="137" val="0"></Value>
+<Value index="138" val="0"></Value>
+<Value index="139" val="0"></Value>
+<Value index="140" val="0"></Value>
+<Value index="141" val="0"></Value>
+<Value index="142" val="0"></Value>
+<Value index="143" val="0"></Value>
+<Value index="144" val="0"></Value>
+<Value index="145" val="0"></Value>
+<Value index="146" val="0"></Value>
+<Value index="147" val="0"></Value>
+<Value index="148" val="0"></Value>
+<Value index="149" val="0"></Value>
+<Value index="150" val="0"></Value>
+<Value index="151" val="0"></Value>
+<Value index="152" val="0"></Value>
+<Value index="153" val="0"></Value>
+<Value index="154" val="0"></Value>
+<Value index="155" val="0"></Value>
+<Value index="156" val="0"></Value>
+<Value index="157" val="0"></Value>
+<Value index="158" val="0"></Value>
+<Value index="159" val="0"></Value>
+<Value index="160" val="0"></Value>
+<Value index="161" val="0"></Value>
+<Value index="162" val="0"></Value>
+<Value index="163" val="0"></Value>
+<Value index="164" val="0"></Value>
+<Value index="165" val="0"></Value>
+<Value index="166" val="0"></Value>
+<Value index="167" val="0"></Value>
+<Value index="168" val="0"></Value>
+<Value index="169" val="0"></Value>
+<Value index="170" val="0"></Value>
+<Value index="171" val="0"></Value>
+<Value index="172" val="0"></Value>
+<Value index="173" val="0"></Value>
+<Value index="174" val="0"></Value>
+<Value index="175" val="0"></Value>
+<Value index="176" val="0"></Value>
+<Value index="177" val="0"></Value>
+<Value index="178" val="0"></Value>
+<Value index="179" val="0"></Value>
+<Value index="180" val="0"></Value>
+<Value index="181" val="0"></Value>
+<Value index="182" val="0"></Value>
+<Value index="183" val="0"></Value>
+<Value index="184" val="0"></Value>
+<Value index="185" val="0"></Value>
+<Value index="186" val="0"></Value>
+<Value index="187" val="0"></Value>
+<Value index="188" val="0"></Value>
+<Value index="189" val="0"></Value>
+<Value index="190" val="0"></Value>
+<Value index="191" val="0"></Value>
+<Value index="192" val="0"></Value>
+<Value index="193" val="0"></Value>
+<Value index="194" val="0"></Value>
+<Value index="195" val="0"></Value>
+<Value index="196" val="0"></Value>
+<Value index="197" val="0"></Value>
+<Value index="198" val="0"></Value>
+<Value index="199" val="0"></Value>
+<Value index="200" val="0"></Value>
+<Value index="201" val="0"></Value>
+<Value index="202" val="0"></Value>
+<Value index="203" val="0"></Value>
+<Value index="204" val="0"></Value>
+<Value index="205" val="0"></Value>
+<Value index="206" val="0"></Value>
+<Value index="207" val="0"></Value>
+<Value index="208" val="0"></Value>
+<Value index="209" val="0"></Value>
+<Value index="210" val="0"></Value>
+<Value index="211" val="0"></Value>
+<Value index="212" val="0"></Value>
+<Value index="213" val="0"></Value>
+<Value index="214" val="0"></Value>
+<Value index="215" val="0"></Value>
+<Value index="216" val="0"></Value>
+<Value index="217" val="0"></Value>
+<Value index="218" val="0"></Value>
+<Value index="219" val="0"></Value>
+<Value index="220" val="0"></Value>
+<Value index="221" val="0"></Value>
+<Value index="222" val="0"></Value>
+<Value index="223" val="0"></Value>
+<Value index="224" val="0"></Value>
+<Value index="225" val="0"></Value>
+<Value index="226" val="0"></Value>
+<Value index="227" val="0"></Value>
+<Value index="228" val="0"></Value>
+<Value index="229" val="0"></Value>
+<Value index="230" val="0"></Value>
+<Value index="231" val="0"></Value>
+<Value index="232" val="0"></Value>
+<Value index="233" val="0"></Value>
+<Value index="234" val="0"></Value>
+<Value index="235" val="0"></Value>
+<Value index="236" val="0"></Value>
+<Value index="237" val="0"></Value>
+<Value index="238" val="0"></Value>
+<Value index="239" val="0"></Value>
+<Value index="240" val="0"></Value>
+<Value index="241" val="0"></Value>
+<Value index="242" val="0"></Value>
+<Value index="243" val="0"></Value>
+<Value index="244" val="0"></Value>
+<Value index="245" val="0"></Value>
+<Value index="246" val="0"></Value>
+<Value index="247" val="0"></Value>
+<Value index="248" val="0"></Value>
+<Value index="249" val="0"></Value>
+<Value index="250" val="0"></Value>
+<Value index="251" val="0"></Value>
+<Value index="252" val="0"></Value>
+<Value index="253" val="0"></Value>
+<Value index="254" val="0"></Value>
+<Value index="255" val="0"></Value>
+</Property>
+<Property name="FileName" default="1" position="8" flags="7" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+<PropList name="LUT-2" default="0" position="2" flags="7" size="10" parent="LUT-2">
+<Property name="Gamma" default="0" position="0" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="1.800000"></Value>
+</Property>
+<Property name="GammaAlpha" default="1" position="1" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+<Property name="GammaMode" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="LinearStart"></Value>
+</Property>
+<Property name="GammaStartThreshold" default="0" position="3" flags="263" size="1" formatString="%d" valType="1">
+<Value index="0" val="12"></Value>
+</Property>
+<Property name="ValueCount" default="1" position="4" flags="259" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+<Property name="InputValues" default="0" position="5" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="255"></Value>
+</Property>
+<Property name="OutputValues" default="0" position="6" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="255"></Value>
+<Value index="1" val="0"></Value>
+</Property>
+<Property name="DirectValues" default="0" position="7" flags="263" size="256" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="0"></Value>
+<Value index="2" val="0"></Value>
+<Value index="3" val="0"></Value>
+<Value index="4" val="0"></Value>
+<Value index="5" val="0"></Value>
+<Value index="6" val="0"></Value>
+<Value index="7" val="0"></Value>
+<Value index="8" val="0"></Value>
+<Value index="9" val="0"></Value>
+<Value index="10" val="0"></Value>
+<Value index="11" val="0"></Value>
+<Value index="12" val="0"></Value>
+<Value index="13" val="0"></Value>
+<Value index="14" val="0"></Value>
+<Value index="15" val="0"></Value>
+<Value index="16" val="0"></Value>
+<Value index="17" val="0"></Value>
+<Value index="18" val="0"></Value>
+<Value index="19" val="0"></Value>
+<Value index="20" val="0"></Value>
+<Value index="21" val="0"></Value>
+<Value index="22" val="0"></Value>
+<Value index="23" val="0"></Value>
+<Value index="24" val="0"></Value>
+<Value index="25" val="0"></Value>
+<Value index="26" val="0"></Value>
+<Value index="27" val="0"></Value>
+<Value index="28" val="0"></Value>
+<Value index="29" val="0"></Value>
+<Value index="30" val="0"></Value>
+<Value index="31" val="0"></Value>
+<Value index="32" val="0"></Value>
+<Value index="33" val="0"></Value>
+<Value index="34" val="0"></Value>
+<Value index="35" val="0"></Value>
+<Value index="36" val="0"></Value>
+<Value index="37" val="0"></Value>
+<Value index="38" val="0"></Value>
+<Value index="39" val="0"></Value>
+<Value index="40" val="0"></Value>
+<Value index="41" val="0"></Value>
+<Value index="42" val="0"></Value>
+<Value index="43" val="0"></Value>
+<Value index="44" val="0"></Value>
+<Value index="45" val="0"></Value>
+<Value index="46" val="0"></Value>
+<Value index="47" val="0"></Value>
+<Value index="48" val="0"></Value>
+<Value index="49" val="0"></Value>
+<Value index="50" val="0"></Value>
+<Value index="51" val="0"></Value>
+<Value index="52" val="0"></Value>
+<Value index="53" val="0"></Value>
+<Value index="54" val="0"></Value>
+<Value index="55" val="0"></Value>
+<Value index="56" val="0"></Value>
+<Value index="57" val="0"></Value>
+<Value index="58" val="0"></Value>
+<Value index="59" val="0"></Value>
+<Value index="60" val="0"></Value>
+<Value index="61" val="0"></Value>
+<Value index="62" val="0"></Value>
+<Value index="63" val="0"></Value>
+<Value index="64" val="0"></Value>
+<Value index="65" val="0"></Value>
+<Value index="66" val="0"></Value>
+<Value index="67" val="0"></Value>
+<Value index="68" val="0"></Value>
+<Value index="69" val="0"></Value>
+<Value index="70" val="0"></Value>
+<Value index="71" val="0"></Value>
+<Value index="72" val="0"></Value>
+<Value index="73" val="0"></Value>
+<Value index="74" val="0"></Value>
+<Value index="75" val="0"></Value>
+<Value index="76" val="0"></Value>
+<Value index="77" val="0"></Value>
+<Value index="78" val="0"></Value>
+<Value index="79" val="0"></Value>
+<Value index="80" val="0"></Value>
+<Value index="81" val="0"></Value>
+<Value index="82" val="0"></Value>
+<Value index="83" val="0"></Value>
+<Value index="84" val="0"></Value>
+<Value index="85" val="0"></Value>
+<Value index="86" val="0"></Value>
+<Value index="87" val="0"></Value>
+<Value index="88" val="0"></Value>
+<Value index="89" val="0"></Value>
+<Value index="90" val="0"></Value>
+<Value index="91" val="0"></Value>
+<Value index="92" val="0"></Value>
+<Value index="93" val="0"></Value>
+<Value index="94" val="0"></Value>
+<Value index="95" val="0"></Value>
+<Value index="96" val="0"></Value>
+<Value index="97" val="0"></Value>
+<Value index="98" val="0"></Value>
+<Value index="99" val="0"></Value>
+<Value index="100" val="0"></Value>
+<Value index="101" val="0"></Value>
+<Value index="102" val="0"></Value>
+<Value index="103" val="0"></Value>
+<Value index="104" val="0"></Value>
+<Value index="105" val="0"></Value>
+<Value index="106" val="0"></Value>
+<Value index="107" val="0"></Value>
+<Value index="108" val="0"></Value>
+<Value index="109" val="0"></Value>
+<Value index="110" val="0"></Value>
+<Value index="111" val="0"></Value>
+<Value index="112" val="0"></Value>
+<Value index="113" val="0"></Value>
+<Value index="114" val="0"></Value>
+<Value index="115" val="0"></Value>
+<Value index="116" val="0"></Value>
+<Value index="117" val="0"></Value>
+<Value index="118" val="0"></Value>
+<Value index="119" val="0"></Value>
+<Value index="120" val="0"></Value>
+<Value index="121" val="0"></Value>
+<Value index="122" val="0"></Value>
+<Value index="123" val="0"></Value>
+<Value index="124" val="0"></Value>
+<Value index="125" val="0"></Value>
+<Value index="126" val="0"></Value>
+<Value index="127" val="0"></Value>
+<Value index="128" val="0"></Value>
+<Value index="129" val="0"></Value>
+<Value index="130" val="0"></Value>
+<Value index="131" val="0"></Value>
+<Value index="132" val="0"></Value>
+<Value index="133" val="0"></Value>
+<Value index="134" val="0"></Value>
+<Value index="135" val="0"></Value>
+<Value index="136" val="0"></Value>
+<Value index="137" val="0"></Value>
+<Value index="138" val="0"></Value>
+<Value index="139" val="0"></Value>
+<Value index="140" val="0"></Value>
+<Value index="141" val="0"></Value>
+<Value index="142" val="0"></Value>
+<Value index="143" val="0"></Value>
+<Value index="144" val="0"></Value>
+<Value index="145" val="0"></Value>
+<Value index="146" val="0"></Value>
+<Value index="147" val="0"></Value>
+<Value index="148" val="0"></Value>
+<Value index="149" val="0"></Value>
+<Value index="150" val="0"></Value>
+<Value index="151" val="0"></Value>
+<Value index="152" val="0"></Value>
+<Value index="153" val="0"></Value>
+<Value index="154" val="0"></Value>
+<Value index="155" val="0"></Value>
+<Value index="156" val="0"></Value>
+<Value index="157" val="0"></Value>
+<Value index="158" val="0"></Value>
+<Value index="159" val="0"></Value>
+<Value index="160" val="0"></Value>
+<Value index="161" val="0"></Value>
+<Value index="162" val="0"></Value>
+<Value index="163" val="0"></Value>
+<Value index="164" val="0"></Value>
+<Value index="165" val="0"></Value>
+<Value index="166" val="0"></Value>
+<Value index="167" val="0"></Value>
+<Value index="168" val="0"></Value>
+<Value index="169" val="0"></Value>
+<Value index="170" val="0"></Value>
+<Value index="171" val="0"></Value>
+<Value index="172" val="0"></Value>
+<Value index="173" val="0"></Value>
+<Value index="174" val="0"></Value>
+<Value index="175" val="0"></Value>
+<Value index="176" val="0"></Value>
+<Value index="177" val="0"></Value>
+<Value index="178" val="0"></Value>
+<Value index="179" val="0"></Value>
+<Value index="180" val="0"></Value>
+<Value index="181" val="0"></Value>
+<Value index="182" val="0"></Value>
+<Value index="183" val="0"></Value>
+<Value index="184" val="0"></Value>
+<Value index="185" val="0"></Value>
+<Value index="186" val="0"></Value>
+<Value index="187" val="0"></Value>
+<Value index="188" val="0"></Value>
+<Value index="189" val="0"></Value>
+<Value index="190" val="0"></Value>
+<Value index="191" val="0"></Value>
+<Value index="192" val="0"></Value>
+<Value index="193" val="0"></Value>
+<Value index="194" val="0"></Value>
+<Value index="195" val="0"></Value>
+<Value index="196" val="0"></Value>
+<Value index="197" val="0"></Value>
+<Value index="198" val="0"></Value>
+<Value index="199" val="0"></Value>
+<Value index="200" val="0"></Value>
+<Value index="201" val="0"></Value>
+<Value index="202" val="0"></Value>
+<Value index="203" val="0"></Value>
+<Value index="204" val="0"></Value>
+<Value index="205" val="0"></Value>
+<Value index="206" val="0"></Value>
+<Value index="207" val="0"></Value>
+<Value index="208" val="0"></Value>
+<Value index="209" val="0"></Value>
+<Value index="210" val="0"></Value>
+<Value index="211" val="0"></Value>
+<Value index="212" val="0"></Value>
+<Value index="213" val="0"></Value>
+<Value index="214" val="0"></Value>
+<Value index="215" val="0"></Value>
+<Value index="216" val="0"></Value>
+<Value index="217" val="0"></Value>
+<Value index="218" val="0"></Value>
+<Value index="219" val="0"></Value>
+<Value index="220" val="0"></Value>
+<Value index="221" val="0"></Value>
+<Value index="222" val="0"></Value>
+<Value index="223" val="0"></Value>
+<Value index="224" val="0"></Value>
+<Value index="225" val="0"></Value>
+<Value index="226" val="0"></Value>
+<Value index="227" val="0"></Value>
+<Value index="228" val="0"></Value>
+<Value index="229" val="0"></Value>
+<Value index="230" val="0"></Value>
+<Value index="231" val="0"></Value>
+<Value index="232" val="0"></Value>
+<Value index="233" val="0"></Value>
+<Value index="234" val="0"></Value>
+<Value index="235" val="0"></Value>
+<Value index="236" val="0"></Value>
+<Value index="237" val="0"></Value>
+<Value index="238" val="0"></Value>
+<Value index="239" val="0"></Value>
+<Value index="240" val="0"></Value>
+<Value index="241" val="0"></Value>
+<Value index="242" val="0"></Value>
+<Value index="243" val="0"></Value>
+<Value index="244" val="0"></Value>
+<Value index="245" val="0"></Value>
+<Value index="246" val="0"></Value>
+<Value index="247" val="0"></Value>
+<Value index="248" val="0"></Value>
+<Value index="249" val="0"></Value>
+<Value index="250" val="0"></Value>
+<Value index="251" val="0"></Value>
+<Value index="252" val="0"></Value>
+<Value index="253" val="0"></Value>
+<Value index="254" val="0"></Value>
+<Value index="255" val="0"></Value>
+</Property>
+<Property name="FileName" default="1" position="8" flags="7" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+<PropList name="LUT-3" default="0" position="3" flags="7" size="10" parent="LUT-3">
+<Property name="Gamma" default="0" position="0" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="1.800000"></Value>
+</Property>
+<Property name="GammaAlpha" default="1" position="1" flags="7" size="1" formatString="%f" valType="2">
+<Value index="0" val="0.000000"></Value>
+</Property>
+<Property name="GammaMode" default="0" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="LinearStart"></Value>
+</Property>
+<Property name="GammaStartThreshold" default="0" position="3" flags="263" size="1" formatString="%d" valType="1">
+<Value index="0" val="12"></Value>
+</Property>
+<Property name="ValueCount" default="1" position="4" flags="259" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+<Property name="InputValues" default="0" position="5" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="255"></Value>
+</Property>
+<Property name="OutputValues" default="0" position="6" flags="263" size="2" formatString="%d" valType="1">
+<Value index="0" val="255"></Value>
+<Value index="1" val="0"></Value>
+</Property>
+<Property name="DirectValues" default="0" position="7" flags="263" size="256" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+<Value index="1" val="0"></Value>
+<Value index="2" val="0"></Value>
+<Value index="3" val="0"></Value>
+<Value index="4" val="0"></Value>
+<Value index="5" val="0"></Value>
+<Value index="6" val="0"></Value>
+<Value index="7" val="0"></Value>
+<Value index="8" val="0"></Value>
+<Value index="9" val="0"></Value>
+<Value index="10" val="0"></Value>
+<Value index="11" val="0"></Value>
+<Value index="12" val="0"></Value>
+<Value index="13" val="0"></Value>
+<Value index="14" val="0"></Value>
+<Value index="15" val="0"></Value>
+<Value index="16" val="0"></Value>
+<Value index="17" val="0"></Value>
+<Value index="18" val="0"></Value>
+<Value index="19" val="0"></Value>
+<Value index="20" val="0"></Value>
+<Value index="21" val="0"></Value>
+<Value index="22" val="0"></Value>
+<Value index="23" val="0"></Value>
+<Value index="24" val="0"></Value>
+<Value index="25" val="0"></Value>
+<Value index="26" val="0"></Value>
+<Value index="27" val="0"></Value>
+<Value index="28" val="0"></Value>
+<Value index="29" val="0"></Value>
+<Value index="30" val="0"></Value>
+<Value index="31" val="0"></Value>
+<Value index="32" val="0"></Value>
+<Value index="33" val="0"></Value>
+<Value index="34" val="0"></Value>
+<Value index="35" val="0"></Value>
+<Value index="36" val="0"></Value>
+<Value index="37" val="0"></Value>
+<Value index="38" val="0"></Value>
+<Value index="39" val="0"></Value>
+<Value index="40" val="0"></Value>
+<Value index="41" val="0"></Value>
+<Value index="42" val="0"></Value>
+<Value index="43" val="0"></Value>
+<Value index="44" val="0"></Value>
+<Value index="45" val="0"></Value>
+<Value index="46" val="0"></Value>
+<Value index="47" val="0"></Value>
+<Value index="48" val="0"></Value>
+<Value index="49" val="0"></Value>
+<Value index="50" val="0"></Value>
+<Value index="51" val="0"></Value>
+<Value index="52" val="0"></Value>
+<Value index="53" val="0"></Value>
+<Value index="54" val="0"></Value>
+<Value index="55" val="0"></Value>
+<Value index="56" val="0"></Value>
+<Value index="57" val="0"></Value>
+<Value index="58" val="0"></Value>
+<Value index="59" val="0"></Value>
+<Value index="60" val="0"></Value>
+<Value index="61" val="0"></Value>
+<Value index="62" val="0"></Value>
+<Value index="63" val="0"></Value>
+<Value index="64" val="0"></Value>
+<Value index="65" val="0"></Value>
+<Value index="66" val="0"></Value>
+<Value index="67" val="0"></Value>
+<Value index="68" val="0"></Value>
+<Value index="69" val="0"></Value>
+<Value index="70" val="0"></Value>
+<Value index="71" val="0"></Value>
+<Value index="72" val="0"></Value>
+<Value index="73" val="0"></Value>
+<Value index="74" val="0"></Value>
+<Value index="75" val="0"></Value>
+<Value index="76" val="0"></Value>
+<Value index="77" val="0"></Value>
+<Value index="78" val="0"></Value>
+<Value index="79" val="0"></Value>
+<Value index="80" val="0"></Value>
+<Value index="81" val="0"></Value>
+<Value index="82" val="0"></Value>
+<Value index="83" val="0"></Value>
+<Value index="84" val="0"></Value>
+<Value index="85" val="0"></Value>
+<Value index="86" val="0"></Value>
+<Value index="87" val="0"></Value>
+<Value index="88" val="0"></Value>
+<Value index="89" val="0"></Value>
+<Value index="90" val="0"></Value>
+<Value index="91" val="0"></Value>
+<Value index="92" val="0"></Value>
+<Value index="93" val="0"></Value>
+<Value index="94" val="0"></Value>
+<Value index="95" val="0"></Value>
+<Value index="96" val="0"></Value>
+<Value index="97" val="0"></Value>
+<Value index="98" val="0"></Value>
+<Value index="99" val="0"></Value>
+<Value index="100" val="0"></Value>
+<Value index="101" val="0"></Value>
+<Value index="102" val="0"></Value>
+<Value index="103" val="0"></Value>
+<Value index="104" val="0"></Value>
+<Value index="105" val="0"></Value>
+<Value index="106" val="0"></Value>
+<Value index="107" val="0"></Value>
+<Value index="108" val="0"></Value>
+<Value index="109" val="0"></Value>
+<Value index="110" val="0"></Value>
+<Value index="111" val="0"></Value>
+<Value index="112" val="0"></Value>
+<Value index="113" val="0"></Value>
+<Value index="114" val="0"></Value>
+<Value index="115" val="0"></Value>
+<Value index="116" val="0"></Value>
+<Value index="117" val="0"></Value>
+<Value index="118" val="0"></Value>
+<Value index="119" val="0"></Value>
+<Value index="120" val="0"></Value>
+<Value index="121" val="0"></Value>
+<Value index="122" val="0"></Value>
+<Value index="123" val="0"></Value>
+<Value index="124" val="0"></Value>
+<Value index="125" val="0"></Value>
+<Value index="126" val="0"></Value>
+<Value index="127" val="0"></Value>
+<Value index="128" val="0"></Value>
+<Value index="129" val="0"></Value>
+<Value index="130" val="0"></Value>
+<Value index="131" val="0"></Value>
+<Value index="132" val="0"></Value>
+<Value index="133" val="0"></Value>
+<Value index="134" val="0"></Value>
+<Value index="135" val="0"></Value>
+<Value index="136" val="0"></Value>
+<Value index="137" val="0"></Value>
+<Value index="138" val="0"></Value>
+<Value index="139" val="0"></Value>
+<Value index="140" val="0"></Value>
+<Value index="141" val="0"></Value>
+<Value index="142" val="0"></Value>
+<Value index="143" val="0"></Value>
+<Value index="144" val="0"></Value>
+<Value index="145" val="0"></Value>
+<Value index="146" val="0"></Value>
+<Value index="147" val="0"></Value>
+<Value index="148" val="0"></Value>
+<Value index="149" val="0"></Value>
+<Value index="150" val="0"></Value>
+<Value index="151" val="0"></Value>
+<Value index="152" val="0"></Value>
+<Value index="153" val="0"></Value>
+<Value index="154" val="0"></Value>
+<Value index="155" val="0"></Value>
+<Value index="156" val="0"></Value>
+<Value index="157" val="0"></Value>
+<Value index="158" val="0"></Value>
+<Value index="159" val="0"></Value>
+<Value index="160" val="0"></Value>
+<Value index="161" val="0"></Value>
+<Value index="162" val="0"></Value>
+<Value index="163" val="0"></Value>
+<Value index="164" val="0"></Value>
+<Value index="165" val="0"></Value>
+<Value index="166" val="0"></Value>
+<Value index="167" val="0"></Value>
+<Value index="168" val="0"></Value>
+<Value index="169" val="0"></Value>
+<Value index="170" val="0"></Value>
+<Value index="171" val="0"></Value>
+<Value index="172" val="0"></Value>
+<Value index="173" val="0"></Value>
+<Value index="174" val="0"></Value>
+<Value index="175" val="0"></Value>
+<Value index="176" val="0"></Value>
+<Value index="177" val="0"></Value>
+<Value index="178" val="0"></Value>
+<Value index="179" val="0"></Value>
+<Value index="180" val="0"></Value>
+<Value index="181" val="0"></Value>
+<Value index="182" val="0"></Value>
+<Value index="183" val="0"></Value>
+<Value index="184" val="0"></Value>
+<Value index="185" val="0"></Value>
+<Value index="186" val="0"></Value>
+<Value index="187" val="0"></Value>
+<Value index="188" val="0"></Value>
+<Value index="189" val="0"></Value>
+<Value index="190" val="0"></Value>
+<Value index="191" val="0"></Value>
+<Value index="192" val="0"></Value>
+<Value index="193" val="0"></Value>
+<Value index="194" val="0"></Value>
+<Value index="195" val="0"></Value>
+<Value index="196" val="0"></Value>
+<Value index="197" val="0"></Value>
+<Value index="198" val="0"></Value>
+<Value index="199" val="0"></Value>
+<Value index="200" val="0"></Value>
+<Value index="201" val="0"></Value>
+<Value index="202" val="0"></Value>
+<Value index="203" val="0"></Value>
+<Value index="204" val="0"></Value>
+<Value index="205" val="0"></Value>
+<Value index="206" val="0"></Value>
+<Value index="207" val="0"></Value>
+<Value index="208" val="0"></Value>
+<Value index="209" val="0"></Value>
+<Value index="210" val="0"></Value>
+<Value index="211" val="0"></Value>
+<Value index="212" val="0"></Value>
+<Value index="213" val="0"></Value>
+<Value index="214" val="0"></Value>
+<Value index="215" val="0"></Value>
+<Value index="216" val="0"></Value>
+<Value index="217" val="0"></Value>
+<Value index="218" val="0"></Value>
+<Value index="219" val="0"></Value>
+<Value index="220" val="0"></Value>
+<Value index="221" val="0"></Value>
+<Value index="222" val="0"></Value>
+<Value index="223" val="0"></Value>
+<Value index="224" val="0"></Value>
+<Value index="225" val="0"></Value>
+<Value index="226" val="0"></Value>
+<Value index="227" val="0"></Value>
+<Value index="228" val="0"></Value>
+<Value index="229" val="0"></Value>
+<Value index="230" val="0"></Value>
+<Value index="231" val="0"></Value>
+<Value index="232" val="0"></Value>
+<Value index="233" val="0"></Value>
+<Value index="234" val="0"></Value>
+<Value index="235" val="0"></Value>
+<Value index="236" val="0"></Value>
+<Value index="237" val="0"></Value>
+<Value index="238" val="0"></Value>
+<Value index="239" val="0"></Value>
+<Value index="240" val="0"></Value>
+<Value index="241" val="0"></Value>
+<Value index="242" val="0"></Value>
+<Value index="243" val="0"></Value>
+<Value index="244" val="0"></Value>
+<Value index="245" val="0"></Value>
+<Value index="246" val="0"></Value>
+<Value index="247" val="0"></Value>
+<Value index="248" val="0"></Value>
+<Value index="249" val="0"></Value>
+<Value index="250" val="0"></Value>
+<Value index="251" val="0"></Value>
+<Value index="252" val="0"></Value>
+<Value index="253" val="0"></Value>
+<Value index="254" val="0"></Value>
+<Value index="255" val="0"></Value>
+</Property>
+<Property name="FileName" default="1" position="8" flags="7" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<PropList name="ChannelSplit" default="0" position="20" flags="3" size="4" parent="ChannelSplit">
+<Property name="ChannelSplitEnable" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="ChannelSplitMode" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Vertical"></Value>
+</Property>
+<Property name="ChannelSplitChannelIndex" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="ChannelSplitDeinterlaceEnable" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+</PropList>
+</PropList>
+<PropList name="ImageDestination" default="0" position="4" flags="3" size="1" parent="ImageDestination">
+<Property name="PixelFormat" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Mono8"></Value>
+</Property>
+</PropList>
+<PropList name="RequestInfo" default="0" position="5" flags="3" size="13" parent="RequestInfo">
+<Property name="FrameID" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="ExposeStart_us" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="ExposeTime_us" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="Gain_dB" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="VideoChannel" default="1" position="7" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="MissingData_pc" default="1" position="8" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="TransferDelay_us" default="1" position="10" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="ImageAverage" default="1" position="11" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="IOStatesAtExposureStart" default="1" position="12" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="On"></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<PropList name="DeviceSpecificData" default="0" position="4" flags="3" size="3" parent="DeviceSpecificData">
+<Property name="DefectiveFilterParameter" default="0" position="0" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+<Property name="FlatFieldFilterParameter" default="0" position="1" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+<Property name="DarkCurrentFilterParameter" default="0" position="2" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+</PropList>
+<PropList name="IOSubSystem" default="0" position="1" flags="3" size="8" parent="none">
+<Property name="DigitalOutputs" default="0" position="1" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+<Value index="1" val="Off"></Value>
+<Value index="2" val="Off"></Value>
+<Value index="3" val="Off"></Value>
+</Property>
+<PropList name="HardwareRealTimeController" default="0" position="3" flags="3" size="1" parent="none">
+<PropList name="HRTCtrl_0" default="0" position="0" flags="3" size="7" parent="RTCtrl">
+<Property name="ProgramSize" default="0" position="0" flags="3" size="1" formatString="%d" valType="1">
+<Value index="0" val="5"></Value>
+</Property>
+<PropList name="RTCtrProgram" default="0" position="1" flags="3" size="5" parent="RTCtrProgram">
+<PropList name="Step0" default="0" position="0" flags="3" size="7" parent="RTProgEntry">
+<Property name="OpCode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Nop"></Value>
+</Property>
+<Property name="Clocks_us" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DigitalInputs" default="1" position="2" flags="7" size="2" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+<Value index="1" val="Ignore"></Value>
+</Property>
+<Property name="DigitalOutputs" default="1" position="3" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+<Value index="1" val="Keep"></Value>
+<Value index="2" val="Keep"></Value>
+<Value index="3" val="Keep"></Value>
+</Property>
+<Property name="Address" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="FrameID" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="SensorHeads" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+</Property>
+</PropList>
+<PropList name="Step1" default="0" position="1" flags="3" size="7" parent="RTProgEntry">
+<Property name="OpCode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Nop"></Value>
+</Property>
+<Property name="Clocks_us" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DigitalInputs" default="1" position="2" flags="7" size="2" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+<Value index="1" val="Ignore"></Value>
+</Property>
+<Property name="DigitalOutputs" default="1" position="3" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+<Value index="1" val="Keep"></Value>
+<Value index="2" val="Keep"></Value>
+<Value index="3" val="Keep"></Value>
+</Property>
+<Property name="Address" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="FrameID" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="SensorHeads" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+</Property>
+</PropList>
+<PropList name="Step2" default="0" position="2" flags="3" size="7" parent="RTProgEntry">
+<Property name="OpCode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Nop"></Value>
+</Property>
+<Property name="Clocks_us" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DigitalInputs" default="1" position="2" flags="7" size="2" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+<Value index="1" val="Ignore"></Value>
+</Property>
+<Property name="DigitalOutputs" default="1" position="3" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+<Value index="1" val="Keep"></Value>
+<Value index="2" val="Keep"></Value>
+<Value index="3" val="Keep"></Value>
+</Property>
+<Property name="Address" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="FrameID" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="SensorHeads" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+</Property>
+</PropList>
+<PropList name="Step3" default="0" position="3" flags="3" size="7" parent="RTProgEntry">
+<Property name="OpCode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Nop"></Value>
+</Property>
+<Property name="Clocks_us" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DigitalInputs" default="1" position="2" flags="7" size="2" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+<Value index="1" val="Ignore"></Value>
+</Property>
+<Property name="DigitalOutputs" default="1" position="3" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+<Value index="1" val="Keep"></Value>
+<Value index="2" val="Keep"></Value>
+<Value index="3" val="Keep"></Value>
+</Property>
+<Property name="Address" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="FrameID" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="SensorHeads" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+</Property>
+</PropList>
+<PropList name="Step4" default="0" position="4" flags="3" size="7" parent="RTProgEntry">
+<Property name="OpCode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Nop"></Value>
+</Property>
+<Property name="Clocks_us" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="DigitalInputs" default="1" position="2" flags="7" size="2" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+<Value index="1" val="Ignore"></Value>
+</Property>
+<Property name="DigitalOutputs" default="1" position="3" flags="7" size="4" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+<Value index="1" val="Keep"></Value>
+<Value index="2" val="Keep"></Value>
+<Value index="3" val="Keep"></Value>
+</Property>
+<Property name="Address" default="1" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="FrameID" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="SensorHeads" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Keep"></Value>
+</Property>
+</PropList>
+</PropList>
+<Property name="Mode" default="1" position="2" flags="3" size="1" formatString="%d" valType="1">
+<Value index="0" val="Stop"></Value>
+</Property>
+<Property name="Filename" default="1" position="4" flags="7" size="1" formatString="%s" valType="4">
+<Value index="0" val="default.rtp"></Value>
+</Property>
+</PropList>
+</PropList>
+<PropList name="I2CControl" default="0" position="5" flags="3" size="9" parent="none">
+<Property name="I2COperationMode" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Read"></Value>
+</Property>
+<Property name="I2CDeviceAddress" default="0" position="3" flags="7" size="1" formatString="0x%03x" valType="1">
+<Value index="0" val="0x000"></Value>
+</Property>
+<Property name="I2CDeviceSubAddressWidth" default="0" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="8"></Value>
+</Property>
+<Property name="I2CDeviceSubAddress" default="0" position="6" flags="7" size="1" formatString="0x%04x" valType="1">
+<Value index="0" val="0x0000"></Value>
+</Property>
+<Property name="I2CBuffer" default="0" position="7" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+<Property name="I2CBufferLength" default="0" position="8" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="1"></Value>
+</Property>
+</PropList>
+</PropList>
+<PropList name="EventSubSystem" default="0" position="2" flags="3" size="4" parent="none">
+<PropList name="Settings" default="0" position="0" flags="3" size="2" parent="none">
+<PropList name="PnPArrival" default="0" position="0" flags="3" size="3" parent="DefaultEventSettings">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+</Property>
+<Property name="QueueDepth" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="5"></Value>
+</Property>
+</PropList>
+<PropList name="PnPRemoval" default="0" position="1" flags="3" size="3" parent="DefaultEventSettings">
+<Property name="Mode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Ignore"></Value>
+</Property>
+<Property name="QueueDepth" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="5"></Value>
+</Property>
+</PropList>
+</PropList>
+</PropList>
+<PropList name="System" default="0" position="5" flags="3" size="7" parent="System">
+<Property name="WorkerPriority" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="TimeCritical"></Value>
+</Property>
+<Property name="RequestCount" default="0" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="4"></Value>
+</Property>
+<PropList name="MemoryInit" default="0" position="2" flags="3" size="6" parent="MemoryInit">
+<Property name="MemoryInitEnable" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="MemoryInitMode" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="FixedValue"></Value>
+</Property>
+<Property name="MemoryInitValue" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="0"></Value>
+</Property>
+<Property name="MemoryInitPattern" default="1" position="3" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+<Property name="MemoryInitPatternFileName" default="1" position="4" flags="2055" size="1" formatString="%s" valType="4">
+<Value index="0" val=""></Value>
+</Property>
+</PropList>
+<PropList name="ImageProcessingControl" default="0" position="3" flags="3" size="2" parent="ImageProcessingControl">
+<Property name="ImageProcessingOptimization" default="0" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="MaximizeSpeed"></Value>
+</Property>
+<Property name="ImageProcessingMode" default="0" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="ProcessLatestOnly"></Value>
+</Property>
+</PropList>
+<PropList name="Camera" default="0" position="4" flags="3" size="6" parent="Camera">
+<Property name="FrameResetMode" default="1" position="0" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="TransferSize" default="1" position="1" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="16KB"></Value>
+</Property>
+<Property name="HeaderMode" default="1" position="2" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="FooterMode" default="1" position="3" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Long(512B)"></Value>
+</Property>
+<Property name="FooterCheckEnable" default="0" position="4" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="Off"></Value>
+</Property>
+<Property name="PipelineFillLevel" default="0" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="2"></Value>
+</Property>
+</PropList>
+<Property name="PowerMode" default="1" position="5" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="On"></Value>
+</Property>
+<Property name="StatusLEDEnable" default="1" position="6" flags="7" size="1" formatString="%d" valType="1">
+<Value index="0" val="On"></Value>
+</Property>
+</PropList>
+</PropList>

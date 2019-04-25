@@ -1,0 +1,21 @@
+<package>
+  <description brief="flowcontrol_mk1">
+
+     flowcontrol_mk1
+
+  </description>
+  <author>nvidia</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/flowcontrol_mk1</url>
+  <depend package="std_msgs"/>
+  <depend package="roscpp"/>
+  <depend package="rospy"/>
+  <depend package="sensor_msgs"/>
+  <depend package="geometry_msgs"/>
+  <depend package="GPU_2_Quad_ROS"/>
+  <rosdep name="opencv2"/>
+
+</package>
+
+
