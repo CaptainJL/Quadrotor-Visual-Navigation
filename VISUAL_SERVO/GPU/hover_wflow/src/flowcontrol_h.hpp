@@ -22,6 +22,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/aruco.hpp>
 
 #include <GPU_2_Quad_ROS/to_px4.h>
 #include <GPU_2_Quad_ROS/from_px4.h>
@@ -65,7 +66,7 @@ public:
 
 	// Externally Referenced Image
 	cv::Mat imageCV;
-	cv::Mat imageCCV;
+	cv::Mat imageLCV;
 
 	// Initialisers
 	void init();
@@ -74,7 +75,11 @@ public:
 	bool start;
 	int img_ctr, flow_ctr, ctrl_ctr, disp_ctr, vis_ctr;
 
+	// cost saving to file
+	float ngamma_save, cost_save, epsilon_save;
 
+	// Camera distortion Removal
+	cv::Mat K, D;
 
 private:
 
@@ -111,7 +116,7 @@ private:
 
 
 	// Image/Containers
-	cv::Mat imageC2CV;
+	cv::Mat imageC2CV, imageUC2CV;
 	cv::Mat imageFCV;		flowfilter::image_t imageF;
 	cv::Mat imageDCV;		
 	cv::Mat flowCV;			flowfilter::image_t flow;
@@ -151,6 +156,7 @@ private:
 	std::ofstream ctrltimefile;
 	std::ofstream flowfile;
 
+
 	// Baro + Yaw setpoints
 	bool home_set;
 	float baro_home;
@@ -184,6 +190,11 @@ private:
  	// Visual Servoing
  	float visservo_xcmd, visservo_ycmd;
  	int visservo_sx, visservo_sy;
+	double aruco_height;
+
+	float vs_x_des, vs_y_des;
+
+
 
 };
 

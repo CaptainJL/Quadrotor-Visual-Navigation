@@ -28,6 +28,10 @@ Flow_Control()
 
 	start_time = (double)ros::Time::now().toSec();
 	
+	// Distortion params
+	K = (Mat_<float>(3,3) << 214.218f, 0, 362.525f, 0, 214.266f, 230.211f, 0, 0, 1.0f); //0.2434f
+	D = (Mat_<float>(1,5) << -0.12345f, 0.01313f, 0, 0, -0.0006f);
+
 }
 Flow_Control::
 ~Flow_Control()
@@ -41,9 +45,9 @@ Flow_Control::
 init()
 {
 	// Camera Sepcs
-	cam_specs[0] = 	60;
-	cam_specs[1] = 	235;	// 240
-	cam_specs[2] = 	235;
+	cam_specs[0] = 	60;		// 45
+	cam_specs[1] = 	180;	// 240
+	cam_specs[2] = 	180;
 	cam_specs[3] = 	imageCV.rows/2;
 	cam_specs[4] = 	imageCV.cols/2;
   	cam_h = 		imageCV.rows;
@@ -85,7 +89,7 @@ init()
 	wf_gpu.wf_params.f = 		cam_specs[1];	
 	wf_gpu.wf_params.pix_len =	1.0;
 	wf_gpu.wf_params.freq =		(double)cam_specs[0];
-	wf_gpu.wf_params.rad = 		115.0;
+	wf_gpu.wf_params.rad = 		120.0;
 
 	double theta_0 = 	atan2(wf_gpu.wf_params.rad,wf_gpu.wf_params.f);
 	double lambda =		(sin(theta_0)*sin(theta_0)) / (4.0-sin(theta_0)*sin(theta_0));
@@ -99,12 +103,17 @@ init()
 
 	// hatLz filter
 	hatLz = log(0.1);
+	aruco_height = 0;
 
 	// Visual servoing
 	visservo_xcmd = 0;
 	visservo_ycmd = 0;
 	visservo_sx = 	-1;
 	visservo_sy =	-1;
+	vs_x_des = 0;
+	vs_y_des = 0;
+
+
 
 }
 
@@ -157,9 +166,10 @@ loop_flow()		// Flow Calc Loop
 			
 			_flow_comp();
 			flow_ctr = img_ctr;
-			
+			//printf("t_flow: %0.6f\n", (double)ros::Time::now().toSec()-tnow);	
 		}		
 		usleep(100);
+		
 	}
 }
 
@@ -184,6 +194,9 @@ loop()			// Control Calc Loop
 	hover_yInt = 0;
 	hover_zInt = 0;	
 
+	vs_y_des = 0;
+	vs_x_des = 0;
+
 
 	// First publish
 	px4cmd.x_vel_des = 	0;
@@ -200,6 +213,10 @@ loop()			// Control Calc Loop
 	usleep(3000000);
 	
 	double time_ctrl = (double)ros::Time::now().toSec();
+	double time_now = (double)ros::Time::now().toSec();
+	double time_ref = 0;
+
+	//bool tap = true;
 
 
 	while(start)
@@ -209,9 +226,7 @@ loop()			// Control Calc Loop
 			time_n = ros::Time::now().toSec();
 			dt = time_n - time_p;
 			time_p = time_n;
-
 			_hover_comp_gpu(dt);
-
 			if (mode_direct==0)		// Wait 10 seconds before takeoff
 			{
 				px4cmd.x_vel_des = 	0;
@@ -233,57 +248,126 @@ loop()			// Control Calc Loop
 			}
 			else if (mode_direct==1)		// Go up approx 1.5m (via 0.5m over 3s)
 			{
-				px4cmd.x_vel_des = 	0;
-				px4cmd.y_vel_des = 	0;
-				px4cmd.z_vel_des = 	-0.5;
-				px4cmd.mode = 		-5.0f; 
+				//px4cmd.x_vel_des = 	0;
+				//px4cmd.y_vel_des = 	0;
+				//px4cmd.z_vel_des = 	-0.5f;
+				px4cmd.z_vel_des = 	-0.7f*(-aruco_height-(-2.0));
+				
+				px4cmd.mode = 		-5.0f;
 				px4cmd.yaw_des = 	yaw_home;
 
-				if ( (double)ros::Time::now().toSec() > (time_ctrl+2.5) )
+				if ( (double)ros::Time::now().toSec() > (time_ctrl+10.0) )
+				{
+					mode_direct++;
+					time_ctrl = (double)ros::Time::now().toSec();
+					printf("Hold Baro!\n");
+				}
+			}			
+			else if (mode_direct==2)		// Slow to zero z vel
+			{
+				//px4cmd.x_vel_des = 	0;
+				//px4cmd.y_vel_des = 	0;
+				px4cmd.z_vel_des = 	-0.7f*(-aruco_height-(-2.0));;
+				px4cmd.mode = 		-5.0f;
+				px4cmd.yaw_des = 	yaw_home;
+
+				if ( (double)ros::Time::now().toSec() > (time_ctrl+5.0) )
 				{
 					mode_direct++;
 					time_ctrl = (double)ros::Time::now().toSec();
 					printf("Hold!\n");
+					vs_x_des = 0.0f;
+					vs_y_des = 0.0f;
 				}
-			}			
-			else if (mode_direct==2)		// Hold for 30s
+			}	
+			else if (mode_direct==3)		// Manveuver for 35s
 			{
-				px4cmd.x_vel_des = 	0;
-				px4cmd.y_vel_des = 	0;
+				//px4cmd.x_vel_des = 	0;
+				//px4cmd.y_vel_des = 	0;
 				//px4cmd.z_vel_des = 	0;
-				px4cmd.mode = 		-5.0f; 
+				px4cmd.mode = 		-5.0f;
 				px4cmd.yaw_des = 	yaw_home;
+				
+				time_now = (double)ros::Time::now().toSec();
+				time_ref = time_now - time_ctrl;
 
-				if (visservo_sx>0 && visservo_sy>0)
+
+
+				
+				// Hover + shift pos
+				if ( time_now>=(time_ctrl+10.0) && time_now<(time_ctrl+15.0) )
 				{
-					px4cmd.x_vel_des = 	visservo_xcmd;
-					px4cmd.y_vel_des = 	visservo_ycmd;
+					vs_y_des = 1.5f;
+				}
+				else if ( time_now>=(time_ctrl+15.0) && time_now<(time_ctrl+20.0) )
+				{
+					vs_y_des = 0.0f;
+				}
+				else if ( time_now>=(time_ctrl+25.0) && time_now<(time_ctrl+30.0) )
+				{
+					vs_y_des = -1.5f;
+				}
+				else
+				{
+					vs_y_des = 0.0f;
 				}
 
-				if ( (double)ros::Time::now().toSec() > (time_ctrl+30.0) )
+
+				// Hover + shift pos
+				/*if ( time_now>=(time_ctrl+10.0) && time_now<(time_ctrl+15.0) )
+				{
+					vs_x_des = 0.0f;
+					vs_y_des = 1.0f;
+				}
+				else if ( time_now>=(time_ctrl+15.0) && time_now<(time_ctrl+20.0) )
+				{
+					vs_x_des = 0.5f;
+					vs_y_des = 0.0f;
+				}
+				else if ( time_now>=(time_ctrl+20.0) && time_now<(time_ctrl+25.0) )
+				{
+					vs_x_des = 0.0f;
+					vs_y_des = -1.0f;
+				}
+				else if ( time_now>=(time_ctrl+25.0) && time_now<(time_ctrl+30.0) )
+				{
+					vs_x_des = -0.5f;
+					vs_y_des = 0.0f;
+				}
+				else
+				{
+					vs_x_des = 0.0f;
+					vs_y_des = 0.0f;
+				}*/
+
+
+
+
+				/* // Fig8
+				if ( (time_ref>=10.0) && (time_ref<70.0) )
+				{
+					vs_x_des = 0.5f*sin(2.0f*PI/(2.0f*15.0f)*(time_ref-10.0f));
+					vs_y_des = 0.8f*cos(2.0f*PI/15.0f*(time_ref-10.0f));
+				}
+				else
+				{
+					vs_x_des = 0.0f;
+				}*/
+
+				if ( time_now > (time_ctrl+40.0) )
 				{
 					mode_direct++;
 					time_ctrl = (double)ros::Time::now().toSec();
 					printf("Landing!\n");
 				}
 			}	
-			else if (mode_direct==3)		// Land
+			else if (mode_direct==4)		// Land
 			{
-				px4cmd.x_vel_des = 	0;
-				px4cmd.y_vel_des = 	0;
+				//px4cmd.x_vel_des = 	0;
+				//px4cmd.y_vel_des = 	0;
 				px4cmd.z_vel_des = 	0.35;
 
-				if ( (double)ros::Time::now().toSec() < (time_ctrl+2.0) )
-				{
-					if (visservo_sx>0 && visservo_sy>0)
-					{
-						px4cmd.x_vel_des = 	visservo_xcmd;
-						px4cmd.y_vel_des = 	visservo_ycmd;
-					}
-				}
-
-
-				px4cmd.mode = 		-5.0f; 
+				px4cmd.mode = 		-5.0f;
 				px4cmd.yaw_des = 	yaw_home;
 			}	
 
@@ -297,7 +381,7 @@ loop()			// Control Calc Loop
 
 		if(px4cmd.z_vel_des>0.5f){ px4cmd.z_vel_des=0.5f; }
 		if(px4cmd.z_vel_des<-0.5f){ px4cmd.z_vel_des=-0.5f; }
-		px4cmd.yaw_des = 	yaw_home+0.15f;
+		px4cmd.yaw_des = 	yaw_home; //+0.25f; //+0.15f
 		px4cmdpub.publish(px4cmd);
 		
 		ros::spinOnce();
@@ -322,13 +406,12 @@ loop_display()	// Display Loop
 			disptime = (double)ros::Time::now().toSec();
 			// Get image and flow
 			lockThread.lock();
-			imageDCV = imageCCV.clone();	// imageCV for gray, imageCCV for colour
+			imageDCV = imageLCV.clone();		// grey
 			flowDispCV = flowTransCV.clone();
-			segDCV = segTransCV.clone();
 			lockThread.unlock();
-
+			
 			// Save data
-			char savedataloc[100] = "/media/captainjl/DATA/ros_ws/hover_wflow/src/data_flow/data/"; ///home/nvidia/ros_ws/flowcontrol_mk1/src/data_flow/data/
+			char savedataloc[100] = "/home/nvidia/ros_ws/hover_wflow/src/data_flow/data/";
 			char imgend[5] = ".jpg";
 			char filenumber[20];
 			sprintf(filenumber, "%d", disp_ctr);
@@ -346,35 +429,31 @@ loop_display()	// Display Loop
 			}
 			imwrite(savedataloc, saveDataCV);
 
-			// Save image
-			char imagefileloc[100] = "/media/captainjl/DATA/ros_ws/hover_wflow/src/data_flow/image/"; ///home/nvidia/ros_ws/flowcontrol_mk1/src/data_flow/image/
-			strcat(imagefileloc, filenumber);
-			strcat(imagefileloc, imgend);
-			imwrite(imagefileloc, imageDCV);
 
 			// Set circle
 			if (visservo_sx>0 && visservo_sy>0)
 			{
-				circle( segDCV, Point( visservo_sx, visservo_sy ), 8.0, 128, -1);
+				circle( imageDCV, Point( visservo_sx, visservo_sy ), 8.0, 128, -1);
 			}
+			// Save image
+			char imagefileloc[100] = "/home/nvidia/ros_ws/hover_wflow/src/data_flow/image/";
+			strcat(imagefileloc, filenumber);
+			strcat(imagefileloc, imgend);
+			imwrite(imagefileloc, imageDCV);
 
+		
 
-			// Save segmentation of blue
-			char segfileloc[100] = "/media/captainjl/DATA/ros_ws/hover_wflow/src/data_flow/segmented/"; ///home/nvidia/ros_ws/flowcontrol_mk1/src/data_flow/image/
-			strcat(segfileloc, filenumber);
-			strcat(segfileloc, imgend);
-			imwrite(segfileloc, segDCV);
 
 			// Display
-			// imshow("image", imageDCV);
-			// imshow("blue seg", segDCV);
-			// waitKey(10); 
+			//imshow("image", imageDCV);
+			//imshow("blue seg", segDCV);
+			//waitKey(10); 
 			disp_ctr++;
 
-			// if (disp_ctr%60 == 0)
-			// {
-			// 	printf("saving time = %0.6f\n", (double)ros::Time::now().toSec()-disptime);
-			// }
+			//if (disp_ctr%60 == 0)
+			//{
+			//    printf("saving time = %0.6f\n", (double)ros::Time::now().toSec()-disptime);
+			//}
 
 			//printf("so it did attempt to save\n");
 			loop_rate.sleep();
@@ -388,8 +467,14 @@ Flow_Control::
 loop_visservo()	// Visual Servoing Loop
 {
 	usleep(500000);
-	double tnow;
+	double tnow,tcpy;
 	ROS_INFO("Visual Servoing thread started!");
+	ros::Rate vis_rate(100);
+
+	float Kdata[9] = { 130, 0, 376, 0, 130, 240, 0, 0, 1 };
+	cv::Mat cameraMatrix = cv::Mat(3, 3, CV_32F, Kdata);
+	cv::Mat distCoeffs; 
+	cv::Ptr<cv::aruco::Dictionary> dictionary =   cv::aruco::getPredefinedDictionary(cv::aruco::DICT_4X4_50);
 
 	while(start)
 	{
@@ -398,122 +483,141 @@ loop_visservo()	// Visual Servoing Loop
 			tnow = (double)ros::Time::now().toSec();
 		
 			lockThread.lock();
-			imageC2CV = imageCCV.clone();
+			imageUC2CV = imageLCV.clone();
 			lockThread.unlock();
-
-			// hsv convertion
-			Mat hsv;
-			cvtColor(imageC2CV, hsv, CV_RGB2HSV);  	//HSV 
-			vector<Mat> image_hsv;
-			split(hsv,image_hsv);
-
-			uint8_t h, s;
-
-			Mat blue_output = image_hsv[2].clone();
-
-			// Dedicate colour spectrum
-			for (int y=0; y<imageC2CV.rows; y++)
-			{
-				for (int x=0; x<imageC2CV.cols; x++)
-				{
-					h = (uint8_t)image_hsv[0].at<char>(y,x);
-					s = (uint8_t)image_hsv[1].at<char>(y,x);
-
-					if (h>5 && h<40 && s>120 && s<180)  //(h>45 && h<60 && s>70 && s<90 
-					{
-						blue_output.at<char>(y,x) = 255;
-					}
-					else
-					{
-						blue_output.at<char>(y,x) = 0;
-					}
-					// if (x==360 && y==120)
-					// {
-					// 	printf("h,s: %d %d\n", h, s);
-					// 	printf("h,s: %d %d char\n",image_hsv[0].at<char>(y,x), image_hsv[2].at<char>(y,x));
-					// }
+			//undistort(imageUC2CV, imageC2CV, K, D);
+			imageC2CV = imageUC2CV.clone();
+			tcpy = (double)ros::Time::now().toSec();
 
 
-				}	
-			}
 
-			// Median filter to elimate noise 
-			medianBlur(blue_output, blue_output, 9);
+			/* CHESSBOARD 
+			int cbx = 5, cby = 4;
+			Size patternsize(cbx,cby);
+			vector<Point2f> corners;
 
+			bool cb_detected = findChessboardCorners( imageC2CV, patternsize, corners,  CALIB_CB_NORMALIZE_IMAGE ); //  | CALIB_CB_ADAPTIVE_THRESH | CALIB_CB_FAST_CHECK
+			//printf("detected? %d\n", cb_detected);
 
-			// Center position
-			int cntg = 0;
-			double gcs = 0, grs = 0;
-
-			for (int y=0; y<imageC2CV.rows; y++)
-			{
-				for (int x=0; x<imageC2CV.cols; x++)
-				{
-					if (blue_output.at<char>(y,x) != 0)
-					{
-						gcs += (double)x;
-						grs += (double)y;
-						cntg++;				
-					}
-				}
-			}
+			int xpos = 0, ypos = 0;
 
 			int g_x, g_y;
-			if (cntg > 10)
+
+			if (cb_detected)
 			{
-				g_x = (int)( gcs/cntg );
-				g_y = (int)( grs/cntg );
+				for (int i = 0; i<(cbx*cby); i++)
+				{
+					xpos += corners[i].x;
+					ypos += corners[i].y;
+				}
+				float gfx =  (int)xpos/(int)(cbx*cby);
+				float gfy =  (int)ypos/(int)(cbx*cby);
+				g_x = (int)gfx;
+				g_y = (int)gfy;
+				//circle( imageC2CV, Point( g_x, g_y ), 8.0, 255, -1);
 			}
 			else
 			{
 				g_x = -1;
-				g_y = -1;	
+				g_y = -1;
+
+			} */
+ 
+
+
+			/* ARUCO MARKERS */
+			int xpos = 0, ypos = 0;
+			int g_x, g_y;
+			std::vector<std::vector<cv::Point2f> > corners; 
+			std::vector<int> ids; 
+			cv::aruco::detectMarkers(imageC2CV, dictionary, corners, ids);
+
+			if (ids.size() > 0)
+			{	
+	
+				vector< Vec3d > rvecs, tvecs;
+				cv::aruco::estimatePoseSingleMarkers(corners, 0.02, cameraMatrix, distCoeffs, rvecs, tvecs);
+				std::vector<cv::Point2f> crnrs = corners[0];
+				Vec3d aruco_pos = tvecs[0];	
+				aruco_height = 35.0*aruco_pos[2]; // Needs a ridiculously high gain for some reason, but is very stable				
+				float cx = 1.0f/4.0f*(crnrs[0].x + crnrs[1].x + crnrs[2].x + crnrs[3].x);
+				float cy = 1.0f/4.0f*(crnrs[0].y + crnrs[1].y + crnrs[2].y + crnrs[3].y);
+				g_x = (int)cx;
+				g_y = (int)cy;
+				//circle( imageC2CV, Point( g_x, g_y ), 8.0, 255, -1);
+				//printf("aruco detected! g_x g_y = %d %d, xyz = %0.3f %0.3f %0.3f\n", g_x, g_y, aruco_pos[0], aruco_pos[1], aruco_height);
+				//printf("aruco detected! z= %0.3f\n", aruco_height);
 			}
+			else
+			{
+				g_x = -1;
+				g_y = -1;
+				//printf("aruco detect failed!\n");
+			} 
+
+
 
 
 
 
 			// Control vx, vy
-			float kpos_visservo = 	1.0f;
-			float assumed_height = 	1.5f;	// Expected height off ground
-			float f = 				2.0f*235;
+			float kpos_visservo = 	0.2f;
+			float assumed_height = 	2.0f;	// Expected height off ground
+			float f = 				180.0f; //376.0f; //235.0f; //200.0f; 
 			float x0 = 				752.0f/2.0f;
 			float y0 =				480.0f/2.0f;
 
+			//if (mode_direct==3)
+			//{			
+			// 	assumed_height =	exp(hatLz);
+			//}
+
 			float quad_x_pos =		assumed_height*(g_y-y0)/f;	// x pos is along camera -y
 			float quad_y_pos =		-assumed_height*(g_x-x0)/f;  // y pos is along camera x
+			
 			// printf("quad pos x,y: %0.3fx %0.3fyf\n", quad_x_pos, quad_y_pos);
 
+			if (mode_direct!=3)
+			{
+				kpos_visservo = 0.2f;
+			}
 
-			float ctrl_x =			-kpos_visservo*(quad_x_pos-0);
-			float ctrl_y =			-kpos_visservo*(quad_y_pos-0);
-
-
-			circle( blue_output, Point( g_x, g_y ), 8.0, 128, -1);
-
-			// imshow("H", image_hsv[0]);
-			// imshow("S", image_hsv[1]);
-			// imshow("Green", blue_output);
-			// waitKey(10);
+			float ctrl_x =			-kpos_visservo*(quad_x_pos-vs_x_des);
+			float ctrl_y =			-kpos_visservo*(quad_y_pos-vs_y_des);
+			if (g_x<0 && g_y<0)
+			{
+				ctrl_x = 0;
+				ctrl_y = 0;
+				
+			}
+			else
+			{
+				hover_xInt = 	quad_x_pos;	
+				hover_yInt =	quad_y_pos;
+			}
 
 
 			// Publish data to system
-			lockThread.lock();
-			segTransCV = blue_output.clone();
+			//lockThread.lock();
 			visservo_xcmd = ctrl_x;
 			visservo_ycmd = ctrl_y;
 			visservo_sx = 	g_x;
 			visservo_sy = 	g_y;
-			lockThread.unlock();
 
-			if (vis_ctr%60==0)
-			{
-				printf("timetaken: %06f\n", (double)ros::Time::now().toSec()-tnow);
-			}	
+			//lockThread.unlock();
+
+			//if (vis_ctr%60==0)
+			//{
+				//printf("timetaken: cpy, since cpy: %0.6f %0.6f\n", tcpy-tnow, (double)ros::Time::now().toSec()-tcpy);
+			//}	
 			
+			//if (visservo_sx>0){ cout << "detected vsx" << endl; }
+			//if (g_x>0) { cout << "detected g_x" << endl; }
+
 			vis_ctr = img_ctr;	
 		}		
-		usleep(1000);
+		//usleep(1000);
+		vis_rate.sleep();
 	}
 }
 

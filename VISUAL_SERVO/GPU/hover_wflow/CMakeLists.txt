@@ -31,8 +31,8 @@ find_package(OpenCV 3 REQUIRED)
 
 # Includes Used
 include_directories(${OpenCV_INCLUDE_DIRS})
-include_directories(/opt/mvIMPACT_acquire)	# pc
-#include_directories(/opt/mvIMPACT_Acquire)	# tx2
+#include_directories(/opt/mvIMPACT_acquire)	# pc
+include_directories(/opt/mvIMPACT_Acquire)	# tx2
 include_directories(${CUDA_INCLUDE_DIRS})
 include_directories ( ${EIGEN3_INCLUDE_DIR} )
 
@@ -58,7 +58,7 @@ cuda_add_library(w_flow_gpu SHARED src/gpu_w_flow.cu)
 rosbuild_add_executable(flowcontrol src/cam_cap.cpp src/flowcontrol.cpp src/flowcontrol_control.cpp) 
 
 # Libs Links
-#target_link_libraries( flowcontrol w_flow_gpu /opt/mvIMPACT_Acquire/lib/arm64/libmvDeviceManager.so ${OpenCV_LIBS} flowfilter_gpu) #cuda_flowctrl
-target_link_libraries(flowcontrol w_flow_gpu /opt/mvIMPACT_acquire/lib/x86_64/libmvDeviceManager.so ${OpenCV_LIBS} flowfilter_gpu) #cuda_flowctrl
+target_link_libraries( flowcontrol w_flow_gpu /opt/mvIMPACT_Acquire/lib/arm64/libmvDeviceManager.so ${OpenCV_LIBS} flowfilter_gpu) #cuda_flowctrl
+#target_link_libraries(flowcontrol w_flow_gpu /opt/mvIMPACT_acquire/lib/x86_64/libmvDeviceManager.so ${OpenCV_LIBS} flowfilter_gpu) #cuda_flowctrl
 
 

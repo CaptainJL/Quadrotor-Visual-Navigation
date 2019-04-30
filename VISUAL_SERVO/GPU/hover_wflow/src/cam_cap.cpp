@@ -21,7 +21,7 @@ int capture_number = 0;
 static bool s_boTerminated = false;
 
 
-
+double tcap = 0;
 
 
 
@@ -81,20 +81,28 @@ void displayImage( CaptureParameter* pCaptureParameter, Request* pRequest )
 //-----------------------------------------------------------------------------
 {
 
-    // int openCVDataType = CV_8UC1;
+    //int openCVDataType = CV_8UC1;
     int openCVDataType = CV_8UC4;
 
+	Mat image_cam, image_cam_grey;
     if (!FCclass->start)
     { 
 		FCclass->start = true; 
 		FCclass->lockThread.lock();
-        FCclass->imageCCV = cv::Mat( cv::Size( pRequest->imageWidth.read(), pRequest->imageHeight.read() ), openCVDataType, pRequest->imageData.read(), pRequest->imageLinePitch.read() );
-        cvtColor(FCclass->imageCCV, FCclass->imageCV, CV_RGB2GRAY);  
-        resize(FCclass->imageCV, FCclass->imageCV, Size(), 0.5, 0.5);  
+		image_cam = cv::Mat( cv::Size( pRequest->imageWidth.read(), pRequest->imageHeight.read() ), openCVDataType, pRequest->imageData.read(), pRequest->imageLinePitch.read() ); 	
+
+
+		//image_cam_grey = Mat(image_cam.rows, image_cam.cols, CV_8UC1);
+		//cvtColor( image_cam, image_cam_grey, CV_RGB2GRAY);
+		//undistort(image_cam_grey, FCclass->imageLCV, FCclass->K, FCclass->D);
+
+		cvtColor( image_cam, FCclass->imageLCV, CV_RGB2GRAY);
+		resize(FCclass->imageLCV, FCclass->imageCV, Size(), 0.5, 0.5);
+
         FCclass->init(); 
         FCclass->img_ctr++;
         FCclass->lockThread.unlock();
-	
+		//printf("on init end\n");
 		thread_flow = 		FCclass->spawn_flow();
 		thread_display = 	FCclass->spawn_display();
 		thread_ctrl = 		FCclass->spawn();
@@ -108,11 +116,27 @@ void displayImage( CaptureParameter* pCaptureParameter, Request* pRequest )
     else
     { 
 		FCclass->lockThread.lock();
-        FCclass->imageCCV = cv::Mat( cv::Size( pRequest->imageWidth.read(), pRequest->imageHeight.read() ), openCVDataType, pRequest->imageData.read(), pRequest->imageLinePitch.read() );
-        cvtColor(FCclass->imageCCV, FCclass->imageCV, CV_RGB2GRAY); 
-        resize(FCclass->imageCV, FCclass->imageCV, Size(), 0.5, 0.5);  
+		//double tsgat = ros::Time::now().toSec();
+		image_cam = cv::Mat( cv::Size( pRequest->imageWidth.read(), pRequest->imageHeight.read() ), openCVDataType, pRequest->imageData.read(), pRequest->imageLinePitch.read() ); 	
+		//printf("on else start\n");
+
+		//image_cam_grey = Mat(image_cam.rows, image_cam.cols, CV_8UC1);
+		//cvtColor( image_cam, image_cam_grey, CV_RGB2GRAY);
+		//undistort(image_cam_grey, FCclass->imageLCV, FCclass->K, FCclass->D);
+
+		cvtColor( image_cam, FCclass->imageLCV, CV_RGB2GRAY);
+		resize(FCclass->imageLCV, FCclass->imageCV, Size(), 0.5, 0.5);
+		//double tegat = ros::Time::now().toSec();
+		//printf("distort time: %0.6f\n", tegat-tsgat);
+		//printf("on else end\n");
+		//if (ros::Time::now().toSec() > (tcap+1.0))
+		//{
+		//	printf("ctr = %d\n", FCclass->img_ctr);
+		//	tcap = ros::Time::now().toSec();
+		//}
         FCclass->img_ctr++;
         FCclass->lockThread.unlock();
+
 	} 
 
 }
@@ -151,14 +175,14 @@ unsigned int DMR_CALL liveLoop( void* pData )
             {
                 ++cnt;
                 // here we can display some statistical information every 100th image
-                if( cnt % 120 == 0 )
+                /*if( cnt % 60 == 0 )
                 {
                     cout << "Info from " << pThreadParameter->pDev->serial.read()
                          << ": " << pThreadParameter->statistics.framesPerSecond.name() << ": " << pThreadParameter->statistics.framesPerSecond.readS()
                          << ", " << pThreadParameter->statistics.errorCount.name() << ": " << pThreadParameter->statistics.errorCount.readS()
                          << ", " << pThreadParameter->statistics.captureTime_s.name() << ": " << pThreadParameter->statistics.captureTime_s.readS()
                          << ", CaptureDimension: " << pRequest->imageWidth.read() << "x" << pRequest->imageHeight.read() << "(" << pRequest->imagePixelFormat.readS() << ")" << endl;
-                }
+                }*/
 
 				
                 displayImage( pThreadParameter, pRequest );
@@ -230,7 +254,7 @@ int main( int argc, char* argv[] )
              << "(error code: " << e.getErrorCodeAsString() << ")." << endl;
     }
     CaptureParameter captureParams( pDev );
-    string settingName = "/media/captainjl/DATA/ros_ws/hover_wflow/src/mvSettings.xml";	 ///home/nvidia/ros_ws/flowcontrol_mk1/src/mvSettings.xml  
+    string settingName = "/home/nvidia/ros_ws/hover_wflow/src/mvSettings.xml";	 ///home/nvidia/ros_ws/flowcontrol_mk1/src/mvSettings.xml  
     if( !settingName.empty() )
     {
         cout << "Trying to load setting " << settingName << "..." << endl;
